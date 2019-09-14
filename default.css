@@ -1,0 +1,53 @@
+
+* {
+    box-sizing: border-box;
+}
+.calculator {
+    display:flex;
+    flex-direction: column;
+    border: 2px solid;
+    width: 320px;
+    margin: 100px auto;
+}
+
+#display {
+    flex: 0 0 auto;
+    background-color: black;
+    color: white;
+    text-align: right;
+    line-height: 80px;
+    font-family: monospace;
+    font-size: 4em;
+    // border: 2px solid;
+    overflow: hidden;
+}
+.buttons {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+
+}
+.row {
+    flex: 1 0 80px;
+    display: flex;
+}
+button {
+    font-size: 2em;
+    border: 2px solid;
+}
+#one, #two, #three, #four, #five, #six, #seven, #eight,
+#nine, #back, #devide, #multiply, #minus, #plus, #equal {
+    flex: 1 0 25%;
+}
+#clear, .num {
+    background-color: lightgrey;
+}
+.oper {
+    background-color: orange;
+}
+#clear {
+    flex: 2 0 50%;
+}
+#zero {
+    flex: 3 0 75%;
+}
