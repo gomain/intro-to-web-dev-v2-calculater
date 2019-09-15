@@ -27,7 +27,7 @@
     flex-direction: column;
 
 }
-.row {
+.button-row {
     flex: 1 0 80px;
     display: flex;
 }
