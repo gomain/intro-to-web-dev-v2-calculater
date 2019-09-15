@@ -60,7 +60,16 @@
             }
         };
     };
-    
+
+    function clear() {
+        value = 0;
+        buffer = '';
+        operator = NONE;
+        mode = INPUT;
+    };
+
+    /* event listeners on each button */
+    /** numbers **/
     document.querySelector('#one').addEventListener('click',() => clickNumber(1));
     document.querySelector('#two').addEventListener('click',() => clickNumber(2));
     document.querySelector('#three').addEventListener('click',() => clickNumber(3));
@@ -71,24 +80,14 @@
     document.querySelector('#eight').addEventListener('click',() => clickNumber(8));
     document.querySelector('#nine').addEventListener('click',() => clickNumber(9));
     document.querySelector('#zero').addEventListener('click',() => clickNumber(0));
-
+    /** operators **/
     document.querySelector('#devide').addEventListener('click',() => clickOperator(DEVIDE));
     document.querySelector('#multiply').addEventListener('click',() => clickOperator(MULTIPLY));
     document.querySelector('#minus').addEventListener('click',() => clickOperator(MINUS));
     document.querySelector('#plus').addEventListener('click',() => clickOperator(PLUS));
-
+    /** functional buttons **/
     document.querySelector('#clear').addEventListener('click', () => clear());
 
-    document.querySelector('.buttons').addEventListener('click',() => updateDisplay());
-                                                        
-
-    function clear() {
-        value = 0;
-        buffer = '';
-        operator = NONE;
-        mode = INPUT;
-    };
-    
     document.querySelector('#equal').addEventListener('click',function () {
         calculate();
         mode = INPUT;
@@ -104,5 +103,9 @@
         };
     });
 
+    /* event listener on any button */
+    document.querySelector('.buttons').addEventListener('click',() => updateDisplay());
+
+    /* display initail state */
     updateDisplay();
 })();
