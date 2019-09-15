@@ -9,7 +9,7 @@
     const BUFFER = 'BUFFER';
     var mode = INPUT;
 
-    /* operator tokens */
+    /** operator tokens **/
     const NONE = 'NONE';
     const DEVIDE = 'DEVIDE';
     const MULTIPLY = 'MUTIPLY';
@@ -27,8 +27,7 @@
             buffer = '' + n;
             mode = BUFFER;
         } else { // mode === BUFFER
-            if (buffer === "0") buffer = '' + n;
-            else buffer = buffer + n;
+            buffer = ((buffer === "0") ? '' : buffer) + n;
         }
     };
 
