@@ -50,7 +50,7 @@ button:hover:after {
     opacity: .5;
 }
 #one, #two, #three, #four, #five, #six, #seven, #eight,
-#nine, #back, #devide, #multiply, #minus, #plus, #equal {
+#nine, #back, #divide, #multiply, #minus, #plus, #equal {
     flex: 1 0 25%;
 }
 button#clear:after, button.num:after {
