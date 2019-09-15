@@ -100,12 +100,7 @@
             clear();
             break;
         default:
-            if (buffer.length <= 1) {
-                clear();
-                break;
-            } else {
-                buffer = buffer.substring(0,buffer.length-1);
-            };
+            buffer = buffer.substring(0,buffer.length-1);
         };
     });
 
