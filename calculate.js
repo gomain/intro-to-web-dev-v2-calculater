@@ -1,24 +1,25 @@
 
 (function() {
     'use strict'
-    const INPUT = 'INPUT';
-    const BUFFER = 'BUFFER';
+
+    /* calculator state */
     var value = 0;
     var buffer = '';
+    const INPUT = 'INPUT';
+    const BUFFER = 'BUFFER';
     var mode = INPUT;
+
+    /* operator tokens */
     const NONE = 'NONE';
     const DEVIDE = 'DEVIDE';
     const MULTIPLY = 'MUTIPLY';
     const MINUS = 'MINUS';
     const PLUS = 'PLUS';
     var operator = NONE;
-    function setValue(val) {
-        value = val;
-        updateDisplay();
-    };
-    
+
     function updateDisplay() {
-        document.querySelector('#display').innerText = mode === INPUT ? value : buffer;
+        document.querySelector('#display').innerText = (mode === INPUT) ?
+            value : (buffer.length === 0) ? "0" : buffer;
     };
 
     function clickNumber(n) {
@@ -26,11 +27,11 @@
             buffer = '' + n;
             mode = BUFFER;
         } else { // mode === BUFFER
-            if (buffer !== "0") buffer = buffer + n;
-            else buffer = '' + n;
+            if (buffer === "0") buffer = '' + n;
+            else buffer = buffer + n;
         }
-        updateDisplay();
     };
+
     function clickOperator(oper) {
         if (mode === BUFFER) {
             calculate();
@@ -38,10 +39,10 @@
         }
         operator = oper;
         mode = INPUT;
-        updateDisplay();
     };
+
     function calculate() {
-        let buffVal = buffer ? parseInt(buffer,10) : 0;
+        let buffVal = parseInt(buffer,10) || 0;
         value = op(value,buffVal);
 
         function op(l,r) {
@@ -78,18 +79,19 @@
 
     document.querySelector('#clear').addEventListener('click', () => clear());
 
+    document.querySelector('.buttons').addEventListener('click',() => updateDisplay());
+                                                        
+
     function clear() {
         value = 0;
         buffer = '';
         operator = NONE;
         mode = INPUT;
-        updateDisplay();
     };
     
     document.querySelector('#equal').addEventListener('click',function () {
         calculate();
         mode = INPUT;
-        updateDisplay();
     });
 
     document.querySelector('#back').addEventListener('click',function () {
@@ -98,9 +100,13 @@
             clear();
             break;
         default:
-            buffer = buffer.substring(0,buffer.length-1);
-        }
-        updateDisplay();
+            if (buffer.length <= 1) {
+                clear();
+                break;
+            } else {
+                buffer = buffer.substring(0,buffer.length-1);
+            };
+        };
     });
 
     updateDisplay();
