@@ -34,15 +34,29 @@
 button {
     font-size: 2em;
     border: 2px solid;
+    position: relative;
+    background-color: transparent;
+}
+button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+button:hover:after {
+    opacity: .5;
 }
 #one, #two, #three, #four, #five, #six, #seven, #eight,
 #nine, #back, #devide, #multiply, #minus, #plus, #equal {
     flex: 1 0 25%;
 }
-#clear, .num {
+button#clear:after, button.num:after {
     background-color: lightgrey;
 }
-.oper {
+button.oper:after {
     background-color: orange;
 }
 #clear {
