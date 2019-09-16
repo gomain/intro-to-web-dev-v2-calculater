@@ -9,7 +9,6 @@
     width: 320px;
     margin: 100px auto;
 }
-
 #display {
     flex: 0 0 auto;
     background-color: black;
@@ -18,7 +17,6 @@
     line-height: 80px;
     font-family: monospace;
     font-size: 4em;
-    // border: 2px solid;
     overflow: hidden;
 }
 .buttons {
