@@ -11,7 +11,7 @@
 
     /** operator tokens **/
     const NONE = 'NONE';
-    const DEVIDE = 'DEVIDE';
+    const DIVIDE = 'DIVIDE';
     const MULTIPLY = 'MUTIPLY';
     const MINUS = 'MINUS';
     const PLUS = 'PLUS';
@@ -46,7 +46,7 @@
 
         function op(l,r) {
             switch (operator) {
-            case DEVIDE:
+            case DIVIDE:
                 return l / r;
             case MULTIPLY:
                 return l * r;
@@ -80,7 +80,7 @@
     document.querySelector('#nine').addEventListener('click',() => clickNumber(9));
     document.querySelector('#zero').addEventListener('click',() => clickNumber(0));
     /** operators **/
-    document.querySelector('#divide').addEventListener('click',() => clickOperator(DEVIDE));
+    document.querySelector('#divide').addEventListener('click',() => clickOperator(DIVIDE));
     document.querySelector('#multiply').addEventListener('click',() => clickOperator(MULTIPLY));
     document.querySelector('#minus').addEventListener('click',() => clickOperator(MINUS));
     document.querySelector('#plus').addEventListener('click',() => clickOperator(PLUS));
