@@ -1,4 +1,4 @@
-lang: node_js
+language:
 install:
 script:
 deploy:
