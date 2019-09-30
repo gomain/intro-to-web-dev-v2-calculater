@@ -1,6 +1,6 @@
 language: node_js
 install:
-script:
+script: true
 deploy:
   provider: pages
   github_token: $GITHUB_TOKEN
