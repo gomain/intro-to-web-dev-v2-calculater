@@ -1,5 +1,5 @@
 language: node_js
-install:
+install: true
 script: true
 deploy:
   provider: pages
