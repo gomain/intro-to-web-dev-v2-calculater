@@ -19,7 +19,10 @@
 
     function updateDisplay() {
         document.querySelector('#display').innerText = (mode === INPUT) ?
-            value : (buffer.length === 0) ? "0" : buffer;
+            value : (buffer.length === 0) ? "0" : displayString(buffer);
+	function displayString(str) {
+	    return (str.length > 12) ? 'E' : str;
+	}
     };
 
     function clickNumber(n) {
