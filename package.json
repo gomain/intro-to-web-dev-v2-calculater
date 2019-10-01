@@ -1,0 +1,29 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Programming assignment of the course found at https://btholt.github.io/intro-to-web-dev-v2/js-project",
+  "main": "index.html",
+  "config": {
+    "port": 3000
+  },
+  "scripts": {
+    "start": "serve --no-clipboard",
+    "test": "cypress run",
+    "ci": "start-server-and-test 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gomain/intro-to-web-dev-v2-calculater.git"
+  },
+  "author": "gomain@gmail.com",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/gomain/intro-to-web-dev-v2-calculater/issues"
+  },
+  "homepage": "https://github.com/gomain/intro-to-web-dev-v2-calculater#readme",
+  "devDependencies": {
+    "serve": "^11.2.0",
+    "start-server-and-test": "^1.10.2",
+    "cypress": "3.4.1"
+  }
+}
