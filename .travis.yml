@@ -4,6 +4,10 @@ addons:
   apt:
     packages:
       - libgconf-2-4
+cache:
+  directories:
+    - ~/.cache
+    - ~/.npm
 install:
   - . npm.sh ci
 script:
