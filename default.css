@@ -1,0 +1,90 @@
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.calculator {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border: 2px solid;
+    width: 320px;
+    margin: 10% auto;
+}
+#display {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    background-color: black;
+    color: white;
+    text-align: right;
+    line-height: 80px;
+    font-family: monospace;
+    font-size: 4em;
+    overflow: hidden;
+}
+.buttons {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+}
+.button-row {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 80px;
+    flex: 1 0 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+button {
+    font-size: 2em;
+    border: 2px solid;
+    position: relative;
+    background-color: transparent;
+}
+button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+button:hover:after {
+    opacity: .5;
+}
+#one, #two, #three, #four, #five, #six, #seven, #eight,
+#nine, #back, #divide, #multiply, #minus, #plus, #equal {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 25%;
+    flex: 1 0 25%;
+}
+button#clear:after, button.num:after {
+    background-color: lightgrey;
+}
+button.oper:after {
+    background-color: orange;
+}
+#clear {
+    -webkit-box-flex: 2;
+    -ms-flex: 2 0 50%;
+    flex: 2 0 50%;
+}
+#zero {
+    -webkit-box-flex: 3;
+    -ms-flex: 3 0 75%;
+    flex: 3 0 75%;
+}
